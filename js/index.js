@@ -63,7 +63,20 @@ const siteContent = {
 const links = selectAll('a');
 for (let i = 0; i <= 5; i++ ) {
   links[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  links[i].style.color = "green";
 }
+
+const nav = select('nav');
+const leftAdd = document.createElement("a");
+const leftContent = document.createTextNode("News");
+leftAdd.appendChild(leftContent);
+nav.prepend(leftAdd)
+
+const rightAdd = document.createElement("a");
+const rightContent = document.createTextNode("Sign Up");
+rightAdd.appendChild(rightContent);
+nav.append(rightAdd)
+
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
