@@ -1,3 +1,25 @@
+getEl = (str) => {
+  return document.getElementsByTagName(str);
+}
+getClass = (str) => {
+
+  return document.getElementById(str);
+}
+getID = (str) => {
+  return document.getElementById(str);
+}
+getName = (str) => {
+  return document.getElementsByName(str);
+}
+select = (str) => {
+  return document.querySelector(str);
+}
+selectAll = (str) => {
+  return document.querySelectorAll(str);
+}
+
+
+
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -37,6 +59,67 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+// NAV
+const links = selectAll('a');
+for (let i = 0; i <= 5; i++ ) {
+  links[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  links[i].style.color = "green";
+}
+
+const nav = select('nav');
+const leftAdd = document.createElement("a");
+const leftContent = document.createTextNode("News");
+leftAdd.appendChild(leftContent);
+nav.prepend(leftAdd)
+
+const rightAdd = document.createElement("a");
+const rightContent = document.createTextNode("Sign Up");
+rightAdd.appendChild(rightContent);
+nav.append(rightAdd)
+
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// CONTAINER
+const container = selectAll('container');
+
+// CTA
+const ctaHeader = select('.cta-text h1');
+ctaHeader.textContent = siteContent["cta"]["h1"];
+const ctaButton = select('.cta-text button');
+ctaButton.textContent = siteContent["cta"]["button"];
+const ctaImg = select('.cta img');
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+// MAIN CONTENT
+const contentH4 = selectAll('.text-content h4')
+contentH4[0].textContent = siteContent["main-content"]["features-h4"];
+contentH4[1].textContent = siteContent["main-content"]["about-h4"];
+contentH4[2].textContent = siteContent["main-content"]["services-h4"];
+contentH4[3].textContent = siteContent["main-content"]["product-h4"];
+contentH4[4].textContent = siteContent["main-content"]["vision-h4"];
+
+const contentP = selectAll('.text-content p')
+contentP[0].textContent = siteContent["main-content"]["features-content"];
+contentP[1].textContent = siteContent["main-content"]["about-content"];
+contentP[2].textContent = siteContent["main-content"]["services-content"];
+contentP[3].textContent = siteContent["main-content"]["product-content"];
+contentP[4].textContent = siteContent["main-content"]["vision-content"];
+
+const contentImg = select('.middle-img');
+contentImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// CONTACT
+const contact = getClass('contact')
+const contacth4 = select('.contact h4');
+contacth4.textContent = siteContent["contact"]["contact-h4"]
+contactp = selectAll('.contact p');
+contactp[0].textContent = siteContent["contact"]["address"];
+contactp[1].textContent = siteContent["contact"]["phone"];
+contactp[2].textContent = siteContent["contact"]["email"];
+
+// FOOTER
+const footer = getEl('footer');
+const footerP = select('footer p');
+footerP.textContent = siteContent["footer"]["copyright"];
