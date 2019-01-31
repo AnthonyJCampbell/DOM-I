@@ -16,12 +16,12 @@ Topics:
  * Work with the object the different selectors return
 
 ## Beginning Project
- * You'll be working in the `digital_timer` directory
- * Add your script tag into you index.html
- * You can open your `index.html` file in your browser to see your work, but you may also work in codepen.io first if you'd like
- * All your work will be done in `index.js`
- * Make sure to read both the `index.html` and `styles.css` files so that you know what you're working with
- * Organization of your code in `index.js` will be up to you. There will be suggestions provided later in the day
+ * [x] You'll be working in the `digital_timer` directory
+ * [x] Add your script tag into you index.html
+ * [x] You can open your `index.html` file in your browser to see your work, but you may also work in codepen.io first if you'd like
+ * [x] All your work will be done in `index.js`
+ * [x] Make sure to read both the `index.html` and `styles.css` files so that you know what you're working with
+ * [x] Organization of your code in `index.js` will be up to you. There will be suggestions provided later in the day
 
 ## Project Description
  You will be making a timer that:
