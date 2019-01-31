@@ -2,8 +2,7 @@ getEl = (str) => {
   return document.getElementsByTagName(str);
 }
 getClass = (str) => {
-
-  return document.getElementById(str);
+  return document.getElementsByClassName(str);
 }
 getID = (str) => {
   return document.getElementById(str);
@@ -17,7 +16,6 @@ select = (str) => {
 selectAll = (str) => {
   return document.querySelectorAll(str);
 }
-
 
 
 const siteContent = {
@@ -81,6 +79,8 @@ nav.append(rightAdd)
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
+
 // CONTAINER
 const container = selectAll('container');
 
@@ -89,6 +89,13 @@ const ctaHeader = select('.cta-text h1');
 ctaHeader.textContent = siteContent["cta"]["h1"];
 const ctaButton = select('.cta-text button');
 ctaButton.textContent = siteContent["cta"]["button"];
+ctaButton.addEventListener('click', (() => {
+  let temp = ctaButton.style;
+  temp.backgroundColor = ('rgba(147,29,37)');
+  temp.color = '#fff';
+  temp.transform = 'scale(1.1)';
+  ctaHeader.style.color = ('rgba(147,29,37)');
+} ));
 const ctaImg = select('.cta img');
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
